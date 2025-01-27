@@ -5,7 +5,7 @@ import { useSelector } from 'react-redux'
 const BannerHome = () => {
   const bannerData = useSelector(state => state.movieData.bannerData);
   const imageURL = useSelector(state => state.movieData.imageURL);
-  const [currentPage, setCurrentPage] = useState(1);
+  const [currentPage, setCurrentPage] = useState(0);
 
   // console.log("banner home", bannerData)
 
@@ -36,7 +36,7 @@ const BannerHome = () => {
 
   return (
     <section className='w-full'>
-      <div className='flex min-h-full max-h-[95vh]'>
+      <div className='flex min-h-full max-h-[95vh] overflow-hidden'>
         {
           bannerData.map((data, index) => {
             // console.log("data", data)
@@ -53,7 +53,7 @@ const BannerHome = () => {
 
                          {/* Pagination controls */}
 
-                         <div className=' fixed flex items-center justify-center gap-5 bottom-0 ml-9 z-30 w-full sm:bottom-6 md:bottom-8 '>
+                         <div className=' fixed flex items-center justify-center gap-5 bottom-8 ml-9 z-30 w-full sm:bottom-6 md:bottom-8 '>
                           <button onClick={handlePrevious} className='bg-green-300 hover:bg-gradient-to-l from-red-500 to-green-200 text-center py-2 font-bold px-3 text-sm sm:text-base md:text-lg mt-4 text-black rounded hover:bg-purple-300 shadow-md transition-all hover:scale-95'>
                             Previous
                           </button>
@@ -71,11 +71,11 @@ const BannerHome = () => {
                   </div>
 
                   <div className='container mx-auto '>
-                    <div className=' w-full absolute z-20 bottom-0 max-w-md px-4  text-white'>
-                      <h1 className='font-bold text-3xl lg:text-4xl drop-shadow-xl'>{data?.title || data?.name}</h1>
+                    <div className=' w-full absolute z-20 bottom-8 max-w-md px-4  text-white'>
+                      <h1 className='font-bold text-2xl lg:text-4xl drop-shadow-xl'>{data?.title || data?.name}</h1>
                       <p className=' text-ellipsis line-clamp-3 my-3'>{data.overview}</p>
 
-                      <div className='flex items-center gap-3'>
+                      <div className='flex items-center gap-3 text-sm lg:text-2xl'>
                         <p>Rating : { Number(data.vote_average).toFixed(1) }+</p>
                         <span>|</span>
                         <p>View : { Number(data.popularity).toFixed(0) }</p>

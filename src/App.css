@@ -26,6 +26,9 @@ html, body {
   color: rebeccapurple;
 }
 
+
+
+
 @media (max-width: 884px) {
   .searchForm {
     width: 40%;

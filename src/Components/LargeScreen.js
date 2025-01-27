@@ -24,7 +24,7 @@ const LargeScreen = () => {
     <>
       <div className="container">
         <div className="row-fluid px-6 text-white flex justify-center ">
-          <div className="text-center flex gap-64">
+          <div className="text-center flex gap-64 justify-center">
             {data.map((Val) => {
               return (
                 <>

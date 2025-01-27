@@ -4,7 +4,7 @@ import LargeScreen from './LargeScreen';
 
 const Footer = () => {
   return (
-    <div className='bg-neutral-600 bottom-0 w-full h-28 bg-opacity-65 flex items-center justify-center fixed z-10'>
+    <div className='bg-neutral-600 w-full lg:h-28 flex items-center justify-center sticky bottom-0 z-10'>
       <div className='hidden lg:block md:block'>
         <LargeScreen />
       </div>
